@@ -52,5 +52,24 @@ function formatMoney(number) {
   return "$" + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
 }
 
+//double money
+function doubleMoney() {
+  data = data.map((elem) => {
+    return { name: elem.name, money: 2 * elem.money };
+  });
+  console.log(data);
+  updateDOM(data);
+}
+
+//sort by richest
+function sortByRichest() {
+  data = data.sort((a, b) => {
+    return b.money - a.money;
+  });
+  updateDOM();
+}
+
 // EventListeners
 userBtn.addEventListener("click", getRandomUser);
+doubleBtn.addEventListener("click", doubleMoney);
+sortBtn.addEventListener("click", sortByRichest);
