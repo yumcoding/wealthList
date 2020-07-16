@@ -19,6 +19,8 @@ h1 {
 }
 
 .container {
+  max-width: 100%;
+  width: 800px;
   display: flex;
 }
 
@@ -34,4 +36,17 @@ button {
   border: 1px solid #111;
   border-radius: 5px;
   display: block;
+}
+
+main {
+  flex: 1;
+  padding: 10px 20px;
+}
+
+#main h2 {
+  font-weight: 300;
+  border-bottom: 1px solid #111;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
