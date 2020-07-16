@@ -69,7 +69,23 @@ function sortByRichest() {
   updateDOM();
 }
 
+//show only Millionaire
+function showOnlyMios() {
+  data = data.filter((elem) => elem.money > 1000000);
+  updateDOM();
+}
+
+// calculate entire wealth
+function calEntireWealth() {
+  const total = data.reduce((acc, user) => (acc += user.money), 0);
+
+  const div = document.createElement("div");
+  div.innerHTML = `<h3>Total: <strong>${formatMoney(total)}</strong></h3>`;
+  main.appendChild(div);
+}
 // EventListeners
 userBtn.addEventListener("click", getRandomUser);
 doubleBtn.addEventListener("click", doubleMoney);
 sortBtn.addEventListener("click", sortByRichest);
+showBtn.addEventListener("click", showOnlyMios);
+calBtn.addEventListener("click", calEntireWealth);
