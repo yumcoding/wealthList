@@ -30,4 +30,16 @@ async function getRandomUser() {
 function addData(obj) {
   data.push(obj);
   //   console.log(data);
+  updateDOM();
+}
+
+function updateDOM(providedData = data) {
+  main.innerHTML = "<h2><strong>Person</strong> Wealth</h2>";
+
+  providedData.forEach((element) => {
+    const div = document.createElement("div");
+    div.classList.add("person");
+    div.innerHTML = `<strong>${element.name}</strong> ${element.money}`;
+    main.appendChild(div);
+  });
 }
