@@ -25,3 +25,9 @@ async function getRandomUser() {
 
   addData(newUser);
 }
+
+// add User to data array
+function addData(obj) {
+  data.push(obj);
+  //   console.log(data);
+}
