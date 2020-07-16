@@ -33,6 +33,7 @@ function addData(obj) {
   updateDOM();
 }
 
+// update DOM
 function updateDOM(providedData = data) {
   main.innerHTML = "<h2><strong>Person</strong> Wealth</h2>";
 
@@ -50,3 +51,6 @@ function updateDOM(providedData = data) {
 function formatMoney(number) {
   return "$" + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
 }
+
+// EventListeners
+userBtn.addEventListener("click", getRandomUser);
